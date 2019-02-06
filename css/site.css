@@ -52,6 +52,7 @@ img{
     display: table;
     background-size: cover;
     background-position: center;
+
 }
 
 .intro .inner{
@@ -261,6 +262,74 @@ footer p{
     margin-block-start: 0px;
     margin-block-end: 0px;
 }
+
+.centered{
+    text-align: center;
+}
+
+
+
+.clearfix {
+    overflow: auto;
+  }
+
+.infoHolder .card{
+    width:70%;
+    margin: auto;
+    margin-bottom: 30px;
+    box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19); 
+}
+
+.infoHolder header{
+    display: flex;
+    background-color: lightgray;
+}
+
+.infoHolder header h3{
+    margin-top: .6em;
+    margin-bottom: .6em;
+}
+
+.infoHolder .cardContent{
+    padding: 0px 10px;
+}
+
+.infoHolder div p{
+    margin-top: .4em;
+    margin-bottom: .2em;
+}
+
+.infoHolder hr{
+    margin: 0px;
+    padding: 0px 10px;
+}
+
+.infoHolder img{
+    float: left;
+    width: 200px;
+    margin: 10px 0px;
+    margin-right: 20px;
+}
+
+.infoHolder a{
+    display: block;
+    background-color: rgb(90, 90, 90);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 6px 0px;
+}
+
+.infoHolder a:visited {
+    color: white;
+}
+
+.infoHolder a:not(.active):hover {
+    background-color: rgba(70, 70, 70, 1);
+}
+
+
+
   
 @media screen and (max-width: 800px) {
     body{
@@ -302,6 +371,11 @@ footer p{
       right: 0;
       top: 0;
       height: 40px;
+    }
+
+    nav i.fa{
+        font-size: 1rem;
+        line-height: 40px;
     }
 
     nav i.fab{
