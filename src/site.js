@@ -34,6 +34,10 @@ function GenerateContent() {
     let attractionsInfo = document.getElementById("attractions");
     let guesthousesInfo = document.getElementById("guesthouses");
     let hotelsInfo = document.getElementById("hotels");
+    let cafeInfo = document.getElementById("cafe");
+    let wineInfo = document.getElementById("wine");
+    let pubInfo = document.getElementById("pub");
+    let restInfo = document.getElementById("rest");
 
     if (eventsInfo) {
         GenerateEvents(eventsInfo);
@@ -47,105 +51,133 @@ function GenerateContent() {
     if (hotelsInfo) {
         GenerateHotels(hotelsInfo);
     }
+
+    if (cafeInfo) {
+        GenerateCafe(cafeInfo);
+    }
+
+    if (pubInfo) {
+        GeneratePub(pubInfo);
+    }
+
+    if (wineInfo) {
+        GenerateWine(wineInfo);
+    }
+
+    if (restInfo) {
+        GenerateRest(restInfo);
+    }
 }
 
 function GenerateEvents(target) {
-    for (let index = 0; index < siteData.events.length; index++) {
-        const element = array[index];
-        let name = element.name;
-        let description = element.description;
-        let date = element.date;
-        let venue = element.venue;
-        let image = element.image;
-        let website = element.website;
-        // etc...
-        let htmlString = (`
-        <div class="card">
-            <header>
-                <h3>${name}</h3>
-            </header>
-            <div class="cardContent clearfix">
-                <p>${date}</p>
-                <p>${venue}</p>
-                <hr>
-                <img src="images/events/${image}">
-                <p>${description}</p><br>
-            </div>
-            <div>
-                <a href="${website}">Visit event website</a>
-            </div>
-        </div>
-        `);
-        target.innerHTML += htmlString;
-    }
-    // siteData.events.forEach(element => {
-    //     let name = element.name;
-    //     let description = element.description;
-    //     let date = element.date;
-    //     let venue = element.venue;
-    //     let image = element.image;
-    //     let website = element.website;
-    //     // etc...
-    //     let htmlString = (`
-    //     <div class="card">
-    //         <header>
-    //             <h3>${name}</h3>
-    //         </header>
-    //         <div class="cardContent clearfix">
-    //             <p>${date}</p>
-    //             <p>${venue}</p>
-    //             <hr>
-    //             <img src="images/events/${image}">
-    //             <p>${description}</p><br>
-    //         </div>
-    //         <div>
-    //             <a href="${website}">Visit event website</a>
-    //         </div>
-    //     </div>
-    //     `);
-    //     target.innerHTML += htmlString;
+    siteData.events.forEach(element => {
+        target.innerHTML += GenerateEventCard(element);
+    });
+}
 
-    // });
+function GenerateAttractions(target){
+    siteData.attractions.forEach(element => {
+        target.innerHTML += GenerateCard(element,"attractions");
+    });
 }
 
 function GenerateGuesthouses(target){
-
+    siteData.stay.guesthouses.forEach(element => {
+        target.innerHTML += GenerateCard(element,"stay");
+    });
 }
 
 function GenerateHotels(target) {
     siteData.stay.hotels.forEach(element => {
-        let name = element.name;
-        let description = element.description;
-        let address = element.address;
-        let phone = element.phone;
-        let email = element.email;
-        let image = element.image;
-        let website = element.website;
-        let location = element.locaton;
-        // etc...
-        let htmlString = (`
+        target.innerHTML += GenerateCard(element,"stay");
+    });
+}
+
+function GenerateCafe(target) {
+    siteData.drink.coffee.forEach(element => {
+        target.innerHTML += GenerateCard(element,"drink");
+    });
+}
+
+function GenerateWine(target) {
+    siteData.drink.wine.forEach(element => {
+        target.innerHTML += GenerateCard(element,"drink");
+    });
+}
+
+function GeneratePub(target) {
+    siteData.drink.beer.forEach(element => {
+        target.innerHTML += GenerateCard(element,"drink");
+    });
+}
+
+function GenerateRest(target) {
+    siteData.eat.forEach(element => {
+        target.innerHTML += GenerateCard(element,"drink");
+    });
+}
+
+function GenerateCard(element, imageFolder) {
+    let name = element.name;
+    let description = element.description;
+    let address = element.address;
+    let phone = element.phone;
+    let email = element.email;
+    let image = element.image;
+    let website = element.website;
+    let location = element.locaton;
+
+    let htmlString = (`
         <div class="card">
             <header>
                 <h3>${name}</h3>
             </header>
             <div class="cardContent clearfix">
                 <p>
-                <a href="${location}"><i class="fas fa-map-marker-alt"></i>${address}</a> tel:${phone}
-                <a href="${website}"><i class="far fa-tv"></i>${website}</a></p>
+                    <a href="${location}"><i class="fas fa-map-marker-alt"></i>${address}</a>
+                    <a href="tel:${phone.replace(/\s/g, '')}"><i class="fas fa-phone"></i>${phone}</a>
+                    <a href="mailto:${email}"><i class="fas fa-envelope"></i>${email}</a>                    
+                </p>
                 <p>
-                    <a href="mailto:${email}"><i class="far fa-envelope"></i> ${email}</a>
                 </p>
                 <hr>
-                <img src="images/stay/${image}">
+                <img src="images/${imageFolder}/${image}">
                 <p>${description}</p><br>
             </div>
             <div>
-                <a href="${website}">Visit event website</a>
+                <a href="${website}">Go to the website</a>
             </div>
         </div>
         `);
-        target.innerHTML += htmlString;
-    });
+    return htmlString;
+}
+
+function GenerateEventCard(element){
+    let name = element.name;
+    let description = element.description;
+    let date = element.date;
+    let venue = element.venue;
+    let image = element.image;
+    let website = element.website;
+
+    let htmlString = (`
+    <div class="card">
+        <header>
+            <h3>${name}</h3>
+        </header>
+        <div class="cardContent clearfix">
+            <p>${date}</p>
+            <p>${venue}</p>
+            <hr>
+            <img src="images/events/${image}">
+            <p>${description}</p><br>
+        </div>
+        <div>
+            <a href="${website}">Visit event website</a>
+        </div>
+    </div>
+    `);
+    return htmlString;
 }
 
 function getData() {
@@ -183,6 +215,28 @@ function getData() {
                 "venue": "Various venues",
                 "image": "ev4.jpg",
                 "website": "https://www.corkcity.ie/en/cork-st-patrick-s-festival/"
+            }
+        ],
+        "attractions":[
+            {
+                "name": "CIT Blackrock Castle Observatory",
+                "description": "Housed in a historic 16th century fort with panoramic views of Cork harbour, Blackrock Castle is today home to a research observatory, science centre and a beautiful café/restaurant serving lunch and dinner.",
+                "address": "Castle Rd, Blackrock, Cork",
+                "phone": "+353 21 435 7917",
+                "email": "info@bco.ie",
+                "website": "http://www.bco.ie/",
+                "image": "at1.jpg",
+                "locaton": "https://goo.gl/maps/SgeGmAqFDuT2"
+            },
+            {
+                "name": "Cork City Gaol",
+                "description": "This Cork heritage centre is renowned for its wax figures. Step back in time to see what 19th / early 20th Century life was like in Cork - inside and outside the prison walls. Amazingly lifelike wax figures, furnished cells, sound effects and fascinating exhibitions.",
+                "address": "Sunday's Well, Cork City",
+                "phone": "+353 21 430 5022",
+                "email": "info@corkcitygaol.com",
+                "website": "http://www.corkcitygaol.com/",
+                "image": "at2.jpg",
+                "locaton": "https://goo.gl/maps/kG5EmYz2oP82"
             }
         ],
         "stay": {
@@ -240,7 +294,97 @@ function getData() {
                     "locaton": "https://goo.gl/maps/Vsbc4WuLr5B2"
                 }
             ]
-        }
+        },
+        "drink": {
+            "wine": [
+                {
+                    "name": "Meades Wine Bar",
+                    "description": "Meades Wine bar is serving excellent wines and local produce in an authentic Georgian ambience.",
+                    "address": "126 Oliver Plunkett St, Centre, Cork, T12 YH77",
+                    "phone": "+353 21 427 1530",
+                    "email": "info@meades126.com",
+                    "website": "http://www.meades126.com/",
+                    "image": "wb1.jpg",
+                    "locaton": "https://goo.gl/maps/J4s8o4ws1Cz"
+                },
+                {
+                    "name": "L’ATITUDE 51 Wine Café",
+                    "description": "Award-winning fully-licenced Wine Bar in Cork City, open for morning coffee, lunch and light evening meals. We serve a wide selection of organic, biodynamic & natural wine and honest and simple food based on traditional home-cooking found in French Bistros and Italian Trattorias. We choose wines and ingredients that respect the environment in which they are grown and that taste of their origin, making every effort to work with seasons. We work with local producers wherever we can.",
+                    "address": "1 Union Quay, Cork",
+                    "phone": "+353 21 239 0219",
+                    "email": "info@latitude51.ie",
+                    "website": "http://www.latitude51.ie/",
+                    "image": "wb2.jpg",
+                    "locaton": "https://goo.gl/maps/rt2wEHyxb1n"
+                }
+            ],
+            "beer": [
+                {
+                    "name": "The Oliver Plunkett",
+                    "description": "We are a traditional Irish pub named after the famous Oliver Plunkett street in Cork City. Famous for the atmosphere built on music and dance that has long been a sweet spot for many looking for a great night out.",
+                    "address": "116 Oliver Plunkett Street, Cork",
+                    "phone": "+353 21 422 2779",
+                    "email": "info@theoliverplunkett.com",
+                    "website": "https://www.theoliverplunkett.com/",
+                    "image": "br1.jpg",
+                    "locaton": "https://goo.gl/maps/ZVHWGhHKDru"
+                },
+                {
+                    "name": "Dennehy's Bar",
+                    "description": "Opened in 1957 & on Cork’s Cornmarket Street (Coal Quay) is one of the last few remaining original authentic old pubs in Cork City. In the Dennehy family for over 60 Years & run entirely by Mary Dennehy & Sons, it has seen many changes to its surrounding environment. Amid developments, progress and technology, Dennehy’s has remained true to the tradition and heritage of what a real traditional Irish pub should be, while embracing new light through old windows.",
+                    "address": "11 Cornmarket St, Centre, Cork, T12 TX97",
+                    "phone": "+353 21 427 2343",
+                    "email": "info@dennehysbar.com",
+                    "website": "http://www.dennehysbar.com",
+                    "image": "br2.jpg",
+                    "locaton": "https://goo.gl/maps/16LwBCFg7nn"
+                }
+            ],
+            "coffee": [
+                {
+                    "name": "Perry St Market Cafe",
+                    "description": "Take a seat at Perry St and relax over breakfast, lunch or one of our famous cakes and a coffee! We have a super space for you to chill out and watch the world go by. Check out our Facebook page for some mouth watering visuals! So if it is some locally sourced produce prepared simply and served with gusto then this is the place for you!",
+                    "address": "Perry St, Cork",
+                    "phone": "+353 21 427 8776",
+                    "email": "info@perrystreet.ie",
+                    "website": "http://www.perrystreet.ie/",
+                    "image": "ca1.jpg",
+                    "locaton": "https://goo.gl/maps/f8SdS15uCjx"
+                },
+                {
+                    "name": "Cafe Gusto",
+                    "description": "afé Gusto continues a long tradition of selling coffee at 3 Washington Street. The site was converted to a café from an antique shop in the summer of 1941, when the O’Brien family took up the lease at a rent of £11 per month. Not only was their coffee renowned but also their ice cream was every kid’s dream, especially when made up into their divine birthday cakes.",
+                    "address": "3 Washington Street, Cork",
+                    "phone": "+353 21 425 4446",
+                    "email": "info@cafegusto.com",
+                    "website": "http://cafegusto.com/",
+                    "image": "ca2.jpg",
+                    "locaton": "https://goo.gl/maps/w5tAZgzRq2S2"
+                }
+            ]
+        },
+        "eat": [
+            {
+                "name": "Ninja Sushi Bento",
+                "description": "Set in the heart of Cork, Ireland, NINJA SUSHI BENTO is proud to offer the finest selection of sushi and Japanese cuisine. Our mission is to deliver a delicious yet affordable dining experience to our customers. Our chefs are focused on creating distinctive dishes made with the freshest ingredients. NINJA’s menu features everything from traditional sashimi to terriyaki chicken, katsu, specialty rolls, and tempura.",
+                "address": "1 Grand Parade Cork",
+                "phone": "+353 21 241 1878",
+                "email": "NinjaSushiBento@hotmail.com",
+                "website": "http://ninjasushibento.ie/",
+                "image": "re1.jpg",
+                "locaton": "https://goo.gl/maps/vLohvywn6YM2"
+            },
+            {
+                "name": "Ichigo Ichie",
+                "description": "Guests will experience Japanese haute-cuisine as Chef Miyazaki performs his kaiseki multi-course tasting menu with elaborately prepared dishes that represent the seasons.",
+                "address": "No5 Sheares St, Centre, Cork, T12 RY7Y",
+                "phone": "+353 21 427 9997",
+                "email": "info@ichigoichie.ie",
+                "website": "https://ichigoichie.ie/",
+                "image": "re2.jpg",
+                "locaton": "https://goo.gl/maps/S1WGDLHbyg72"
+            }
+        ]
     }
     `);
     console.log(data);
