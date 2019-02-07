@@ -64,7 +64,6 @@
 }
 
 .infoHolder > div > div p:nth-child(-n+2) a{
-    font-size: .9em;
     color: black;
     margin-right: 20px;
     text-decoration: none;
