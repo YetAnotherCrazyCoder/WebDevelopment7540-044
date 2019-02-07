@@ -1,143 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Oswald');
-@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
 
-html, body{
+html{
     margin: 0;
     padding: 0;
-    font-size: 1rem;
-    line-height: 1.6;
     font-family: Arial,sans-serif;
-    letter-spacing: -.00278rem;
+    font-size: 1rem;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
 }
 
 main{
+    width: 90vw;
     margin: auto;
 }
 
-article ul li{
-    margin: 4px 0px;
-}
-
-h1, h2, h3, h4{
+h1, h2, h3, h4, h5{
     font-family: 'Raleway', sans-serif;
     color: rgb(10, 83, 126);
-    text-align: justify;
-    text-justify: newspaper;
-    padding: 0px 10px;
-    margin-top: 1.5em;
-    margin-bottom: 0.4em;
 }
 
-p{
-    text-align: justify;
-    text-justify: newspaper;
-    padding: 0px 10px;
-}
-
-img{
-    max-width: 70vw;
-    margin: 20px 0px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.intro{
-    height: 100vh;
-    width: 100%;
-    margin: auto;
-    background: url('../images/cork-ps.jpg') no-repeat;
-    display: table;
-    background-size: cover;
-    background-position: center;
-
-}
-
-.intro .inner{
-    display: table-cell;
-    vertical-align: middle;
-    width: 100%;
-    max-width: none;
-}
-
-.content{
-    max-width: 600px;
-    margin: 0 auto;
+.centered{
     text-align: center;
-}
-
-.content .animated{
-    position: relative;
-    animation: slideIn;
-    animation-duration: 4s;
-    animation-fill-mode: forwards;
-    padding: 40px;
-    background: rgba(0, 0, 0, 0)
-    
-}
-
-@keyframes slideIn{
-    0% {bottom: -1000px}
-    40% {bottom: 30px;
-        background: rgba(0, 0, 0,0.0)}
-    
-    100% {bottom: 0px;
-        background: rgba(0, 0, 0,0.4);
-    }
-}
-
-.content h1{
-    font-family: 'Raleway', sans-serif;
-    color: rgba(243, 241, 219,1);
-    text-shadow: 0px 0px 10px #333;
-    font-size: 400%;
-    text-align: center;
-    text-justify: unset;
-    padding: 0px;
-    margin-top: 0px;
-
-}
-
-.content h3{
-    font-family: 'Raleway', sans-serif;
-    color: rgba(243, 241, 219,0.9);
-    text-shadow: 0px 0px 10px #333;
-    font-size: 200%;
-    text-align: center;
-    text-justify: unset;
-    padding: 0px;
-    margin-top: 0px;
-    margin-bottom: 1em;
-}
-
-.content .btn{
-    border-radius: 6px;
-    font-family: 'Oswald', sans-serif;
-    color: rgb(243, 241, 219);
-    font-size: 135%;
-    padding: 10px 20px;
-    border: solid rgb(255, 230, 205) 2px;
-    text-decoration: none;
-    text-shadow: 0px 0px 5px #333;
-    box-shadow: 0px 0px 15px #333;
-}
-
-.content .btn:hover{
-    color: white;
-    border: solid white 2px;
 }
 
 nav{
-    overflow: hidden;
-    width: 100%;
+    width: 100vw;
     height: 50px;
-    background-color: rgb(60, 60, 60);
-    position: sticky;
-    position: -webkit-sticky;
     top: 0px;
     z-index: 11;
+    position: sticky;
+    position: -webkit-sticky;
+    overflow: hidden;
+    line-height: 50px;
+    background-color: rgb(60, 60, 60);
 }
 
 nav span{
@@ -147,12 +43,12 @@ nav span{
 nav a{
     display: block;
     float: left;
-    color: rgb(255, 230, 205);
     padding: 0 20px;
+    color: rgb(255, 230, 205);
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
+    letter-spacing: +.1rem;
     text-decoration: none;
-    line-height: 50px;
     text-transform: uppercase;
 }
 
@@ -176,77 +72,17 @@ nav i{
     vertical-align: top;
 }
 
-nav i.fab{
-    font-size: 1.4rem;
+nav i.fab, nav i.fas{
     line-height: 50px;
+    font-size: 1rem;
 }
 
-nav i.fas{
-    font-size: 1.3rem;
-    line-height: 50px;
-}
-
-.float-left{
-    float: left;
-}
-
-.float-right{
-    float: right;
-}
-  
-.active {
+nav .active {
     background-color: rgb(43, 102, 45);
 }
 
 nav .icon {
     display: none;
-}
-
-.container{
-    width: 90%;
-    margin: auto;
-    overflow: hidden;
-}
-  
-.columns {
-    margin-top: 20px;
-}
-  
-.columns .column {
-    float: left;
-    text-align: center;
-    width: 30%;
-    padding: 10px;
-}
-
-.columns .column h3{
-    font-family: 'Raleway', sans-serif;
-}
-
-.columns .column img{
-    height:90px;
-}
-
-.columns .column .more{
-    padding-right: 10px;
-}
-
-.white-shadow{
-    position:relative;
-    width: 100%;
-    display: block;
-    text-align: right;
-  }
-
-.white-shadow:after{
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 85%);
-    bottom: 100%;
-    content: '';
-    display: inline-block;
-    height: 150px;
-    position: absolute;
-    right: 0;
-    width: 100%;
 }
 
 footer {
@@ -267,156 +103,15 @@ footer p{
     margin-block-end: 0px;
 }
 
-.centered{
-    text-align: center;
-}
 
-.clearfix {
-    overflow: auto;
-}
-
-.infoHolder .card{
-    width:70%;
-    margin: auto;
-    margin-bottom: 30px;
-    box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19); 
-}
-
-.infoHolder header{
-    display: flex;
-    background-color: lightgray;
-}
-
-.infoHolder header h3{
-    margin-top: .6em;
-    margin-bottom: .6em;
-}
-
-.infoHolder .cardContent{
-    padding: 0px 10px;
-}
-
-.infoHolder div p{
-    margin-top: .2em;
-    margin-bottom: .0em;
-}
-
-.infoHolder hr{
-    margin: 0px;
-    padding: 0px 10px;
-}
-
-.infoHolder img{
-    float: left;
-    width: 200px;
-    margin: 10px 0px;
-    margin-right: 20px;
-}
-
-.infoHolder > div > div:last-child a:last-child{
-    display: block;
-    background-color: rgb(90, 90, 90);
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    padding: 6px 0px;
-}
-
-.infoHolder > div > div:last-child a:last-child:visited {
-    color: white;
-}
-
-.infoHolder > div > div:last-child a:last-child:not(.active):hover {
-    background-color: rgba(70, 70, 70, 1);
-}
-
-.infoHolder > div > div p:nth-child(-n+2){
-    text-align: left;
-}
-
-.infoHolder > div > div p:nth-child(-n+2) a{
-    font-size: .9em;
-    color: black;
-    margin-right: 20px;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.infoHolder > div > div p:nth-child(-n+2) a:visited{
-    color: black;
-}
-
-.infoHolder > div > div p:nth-child(-n+2) a:hover{
-    color: red;
-}
-
-.infoHolder > div > div p:nth-child(-n+2) > a > i{
-    width: 30px;
-    text-align: center;
-}
-
-iframe{
-    max-width: 86vw;
-    margin: 20px 0px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-* {box-sizing: border-box;}
-
-form{
-    width: 90%;
-    margin: auto;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
-
-
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-  }
-  
-  .submit {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
-    background-color: #45a049;
-  }
-
-
-  
 @media screen and (max-width: 800px) {
     body{
-        font-size: 90%;
-    }
-
-    .content h1{
-        font-size: 250%;
-    }
-
-    .content .btn{
-        border-radius: 4px;
-        font-size: 100%;
-        padding: 5px 10px;
+        font-size: .9em;
     }
 
     nav{
         height: 100%;
+        line-height: 40px;
     }
 
     nav span{
@@ -424,10 +119,8 @@ input[type=text], select, textarea {
     }
 
     nav a{
-        line-height: 40px;
-        padding: 0 20px;
         float: none;
-        height: 40px;
+        /* height: 40px; */
     }
 
     nav a:nth-child(n+2){
@@ -442,18 +135,7 @@ input[type=text], select, textarea {
       height: 40px;
     }
 
-    nav i.fa{
-        font-size: 1rem;
-        line-height: 40px;
-    }
-
-    nav i.fab{
-        font-size: 1.2rem;
-        line-height: 40px;
-    }
-    
-    nav i.fas{
-        font-size: 1rem;
+    nav i.fab, nav i.fas, nav i.fa{
         line-height: 40px;
     }
 
@@ -466,40 +148,21 @@ input[type=text], select, textarea {
         height: 40px;
         line-height: 40px;
     }
-
-    .columns .column{
-        float: none;
-        text-align: center;
-        width: 90%;
-        margin: auto;
-    }
-
-    .infoHolder .card {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-
-    .infoHolder .card img{
-        width: 100%;
-        float: none;
-        margin: auto;
-        padding: 10px 0px;
-    }
 }
-  
+
 @media screen and (max-width: 800px) {
     nav.responsive .icon {
       position: absolute;
       right: 0;
       top: 0;
-      height: 40px;
+      /* height: 40px; */
     }
 
     nav.responsive a {
       float: none;
       display: block;
       text-align: left;
-      height: 40px;
+      /* height: 40px; */
     }
 }
 
@@ -509,16 +172,11 @@ input[type=text], select, textarea {
         align-content: center;
         text-align: center;
     }
-
-    main{
-        width: 90vw;
-        margin: auto;
-    }
 }
 
 @media screen and (min-width: 1080px) {
     main{
-        width: 66vw;
+        width: 50vw;
         margin: auto;
     }
 }

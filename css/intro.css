@@ -1,0 +1,97 @@
+.intro{
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    background: url('../images/cork-ps.jpg') no-repeat;
+    display: table;
+    background-size: cover;
+    background-position: center;
+}
+
+.intro .inner{
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    max-width: none;
+}
+
+.welcome{
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.welcome .animated{
+    position: relative;
+    animation: slideIn;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0)
+    
+}
+
+@keyframes slideIn{
+    0% {bottom: -1000px}
+    40% {bottom: 30px;
+        background: rgba(0, 0, 0,0.0)}
+    
+    100% {bottom: 0px;
+        background: rgba(0, 0, 0,0.4);
+    }
+}
+
+.welcome h1{
+    font-family: 'Raleway', sans-serif;
+    color: rgba(243, 241, 219,1);
+    text-shadow: 0px 0px 10px #333;
+    font-size: 400%;
+    text-align: center;
+    text-justify: unset;
+    padding: 0px;
+    margin-top: 0px;
+
+}
+
+.welcome h3{
+    font-family: 'Raleway', sans-serif;
+    color: rgba(243, 241, 219,0.9);
+    text-shadow: 0px 0px 10px #333;
+    font-size: 200%;
+    text-align: center;
+    text-justify: unset;
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 1em;
+}
+
+.welcome .btn{
+    border-radius: 6px;
+    font-family: 'Oswald', sans-serif;
+    color: rgb(243, 241, 219);
+    font-size: 135%;
+    padding: 10px 20px;
+    border: solid rgb(255, 230, 205) 2px;
+    text-decoration: none;
+    text-shadow: 0px 0px 5px #333;
+    box-shadow: 0px 0px 15px #333;
+}
+
+.welcome .btn:hover{
+    color: white;
+    border: solid white 2px;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .welcome h1{
+        font-size: 250%;
+    }
+
+    .welcome .btn{
+        border-radius: 4px;
+        font-size: 100%;
+        padding: 5px 10px;
+    }
+}

@@ -70,7 +70,7 @@
             {
                 "name": "Redclyffe Guesthouse",
                 "description": "Overlooking Fitzgerald Park, The Redclyffe Guesthouse is opposite University College Cork. Cork city centre is a 10-minute walk and Redclyffe offers free Wi-Fi, free parking and traditional breakfasts.",
-                "address": "1 Western Rd, Mardyke, Cork, T12 D9P8",
+                "address": "1 Western Rd, Mardyke, Cork",
                 "phone": "+353 21 427 3220",
                 "email": "info@redclyffe.com",
                 "website": "http://www.redclyffe.com/",
@@ -92,7 +92,7 @@
             {
                 "name": "Clayton Hotel Cork City",
                 "description": "Clayton Hotel Cork City is Cork's premier 4 Star city centre hotel and is superbly located overlooking Cork's famous River Lee and facing the inspired architecture of City Hall.",
-                "address": "Lapp's Quay, Centre, Cork, T12 RD6E",
+                "address": "Lapp's Quay, Centre, Cork",
                 "phone": "+353 21 422 4900",
                 "email": "res.corkcity@claytonhotels.com",
                 "website": "https://www.claytonhotelcorkcity.com/",
@@ -102,7 +102,7 @@
             {
                 "name": "Jurys Inn Cork",
                 "description": "Whether you’re exploring the local sights, visiting for business or catching a ferry from the port, Jurys Inn Cork is ideally located for your stay in this beautiful coastal city. We know the little details matter, and that’s why we have everything from stylish yet comfortable rooms, on-site restaurants, events spaces and more at our hotel in Cork.",
-                "address": "Anderson's Quay, Cork, T12 DCR9",
+                "address": "Anderson's Quay, Cork",
                 "phone": "+353 21 494 3000",
                 "email": "jurysinncork@jurysinns.com",
                 "website": "https://www.jurysinns.com/hotels/cork",
@@ -116,7 +116,7 @@
             {
                 "name": "Meades Wine Bar",
                 "description": "Meades Wine bar is serving excellent wines and local produce in an authentic Georgian ambience.",
-                "address": "126 Oliver Plunkett St, Centre, Cork, T12 YH77",
+                "address": "126 Oliver Plunkett St, Cork",
                 "phone": "+353 21 427 1530",
                 "email": "info@meades126.com",
                 "website": "http://www.meades126.com/",
@@ -148,7 +148,7 @@
             {
                 "name": "Dennehy's Bar",
                 "description": "Opened in 1957 & on Cork’s Cornmarket Street (Coal Quay) is one of the last few remaining original authentic old pubs in Cork City. In the Dennehy family for over 60 Years & run entirely by Mary Dennehy & Sons, it has seen many changes to its surrounding environment. Amid developments, progress and technology, Dennehy’s has remained true to the tradition and heritage of what a real traditional Irish pub should be, while embracing new light through old windows.",
-                "address": "11 Cornmarket St, Centre, Cork, T12 TX97",
+                "address": "11 Cornmarket St, Cork",
                 "phone": "+353 21 427 2343",
                 "email": "info@dennehysbar.com",
                 "website": "http://www.dennehysbar.com",
@@ -193,7 +193,7 @@
         {
             "name": "Ichigo Ichie",
             "description": "Guests will experience Japanese haute-cuisine as Chef Miyazaki performs his kaiseki multi-course tasting menu with elaborately prepared dishes that represent the seasons.",
-            "address": "No5 Sheares St, Centre, Cork, T12 RY7Y",
+            "address": "No5 Sheares St, Cork",
             "phone": "+353 21 427 9997",
             "email": "info@ichigoichie.ie",
             "website": "https://ichigoichie.ie/",
