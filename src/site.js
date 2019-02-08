@@ -29,6 +29,20 @@ function switchNavbar() {
     }
 }
 
+function Submit() {
+    var fname = document.getElementById('fname').value;
+    var lname = document.getElementById('lname').value;
+    var email= document.getElementById('email').value;
+    var category = document.getElementById('category').value;
+    var subject = document.getElementById('subject').value;
+    var message = document.getElementById('message').value;
+    var link = "mailto:yourEmail@domain.com"
+             + "?subject=[" + category + "] " + subject
+             + "&body=" + "Dear Mr/Ms,/n" + message + "/n" + 
+             + "Regards " + fname + " " + lname + "/n" + email;
+    window.location.href = link;
+}
+
 function GenerateContent() {
     let eventsInfo = document.getElementById("events");
     let attractionsInfo = document.getElementById("attractions");
@@ -145,7 +159,7 @@ function GenerateCard(element, imageFolder) {
                 <p>${description}</p><br>
             </div>
             <div>
-                <a href="${website}">Go to the website</a>
+                <a href="${website}" target="_blank">Go to the website</a>
             </div>
         </div>
         `);
@@ -173,7 +187,7 @@ function GenerateEventCard(element){
             <p>${description}</p><br>
         </div>
         <div>
-            <a href="${website}">Visit event website</a>
+            <a href="${website}" target="_blank">Visit event website</a>
         </div>
     </div>
     `);
