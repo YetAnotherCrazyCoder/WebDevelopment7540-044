@@ -36,10 +36,10 @@ function Submit() {
     var category = document.getElementById('category').value;
     var subject = encodeURIComponent(document.getElementById('subject').value);
     var message = encodeURIComponent(document.getElementById('message').value);
-    var link = "mailto:yourEmail@domain.com"
+    var link = "mailto:info@corkcitypromotion.org"
              + "?subject=[" + category + "] " + subject
              + "&body=" + "Dear Mr/Ms,%0D%0A" + message + "%0D%0A%0D%0A"
-             + "Best Regards " + fname + " " + lname + "%0D%0A" + email;
+             + "Best Regards%0D%0A" + fname + " " + lname + "%0D%0A" + email;
     window.location.href = link;
 }
 
@@ -148,7 +148,7 @@ function GenerateCard(element, imageFolder) {
             </header>
             <div class="cardContent clearfix">
                 <p>
-                    <a href="${location}"><i class="fas fa-map-marker-alt"></i>${address}</a>
+                    <a href="${location}" target="_blank"><i class="fas fa-map-marker-alt"></i>${address}</a>
                     <a href="tel:${phone.replace(/\s/g, '')}"><i class="fas fa-phone"></i>${phone}</a>
                     <a href="mailto:${email}"><i class="fas fa-envelope"></i>${email}</a>                    
                 </p>
