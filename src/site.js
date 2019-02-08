@@ -34,11 +34,11 @@ function Submit() {
     var lname = document.getElementById('lname').value;
     var email= document.getElementById('email').value;
     var category = document.getElementById('category').value;
-    var subject = document.getElementById('subject').value;
-    var message = document.getElementById('message').value;
+    var subject = encodeURIComponent(document.getElementById('subject').value);
+    var message = encodeURIComponent(document.getElementById('message').value);
     var link = "mailto:yourEmail@domain.com"
              + "?subject=[" + category + "] " + subject
-             + "&body=" + "Dear Mr/Ms,%0D%0A" + message + "%0D%0A" + 
+             + "&body=" + "Dear Mr/Ms,%0D%0A" + message + "%0D%0A%0D%0A" + 
              + "Best Regards " + fname + " " + lname + "%0D%0A" + email;
     window.location.href = link;
 }
