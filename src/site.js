@@ -38,8 +38,8 @@ function Submit() {
     var message = document.getElementById('message').value;
     var link = "mailto:yourEmail@domain.com"
              + "?subject=[" + category + "] " + subject
-             + "&body=" + "Dear Mr/Ms,/n" + message + "/n" + 
-             + "Regards " + fname + " " + lname + "/n" + email;
+             + "&body=" + "Dear Mr/Ms,%0D%0A" + message + "%0D%0A" + 
+             + "Best Regards " + fname + " " + lname + "%0D%0A" + email;
     window.location.href = link;
 }
 
