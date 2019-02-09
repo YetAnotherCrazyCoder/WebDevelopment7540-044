@@ -7,6 +7,11 @@ article p {
     text-justify: auto;
 }
 
+article ul{
+    width: auto;
+    overflow: hidden; 
+}
+
 article > section > section img{
     float: right;
     width: 240px;
@@ -35,6 +40,12 @@ article > section > section a:hover{
     color: darkcyan;
 }
 
+article > section > section a i{
+    width: 30px;
+    text-align: center;
+    margin-left: 20px;
+}
+
 .clearfix {
     overflow: auto;
 }
@@ -42,8 +53,10 @@ article > section > section a:hover{
 article iframe{
     width: 100%;
     height: 450px;
-    margin: 20px 0px;
+    
     display: block;
+    margin-top: 40px;
+    margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
     border: 0;
@@ -56,8 +69,8 @@ article section{
 
 .parallax {
     background-image: url('../images/cork-pan_opt.jpg');
-    background-size: 100vw;
-    min-height: 250px; 
+    height: 250px; 
+    background-size: auto;
     background-attachment: fixed;
     background-position: top;
     background-repeat: no-repeat;

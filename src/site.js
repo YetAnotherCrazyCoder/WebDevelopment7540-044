@@ -9,7 +9,7 @@ function RunScripts() {
 
 function updateFooter() {
     let currentDate = new Date();
-    document.getElementById("footerText").innerHTML = `Design & Coding by Arek, Copyright &#169; ${currentDate.getFullYear()}`
+    document.getElementById("footerText").innerHTML = `Design & Development Arkadiusz Czernecki, Copyright &#169; ${currentDate.getFullYear()}`
 }
 
 function switchNavbar() {
@@ -155,7 +155,7 @@ function GenerateCard(element, imageFolder) {
                 <p>
                 </p>
                 <hr>
-                <img src="images/${imageFolder}/${image}">
+                <img src="images/${imageFolder}/${image}" alt="${name} poster or advertisement">
                 <p>${description}</p><br>
             </div>
             <div>
